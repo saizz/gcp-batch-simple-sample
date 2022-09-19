@@ -1,0 +1,24 @@
+{
+  "taskGroups": [
+    {
+      "taskSpec": {
+        "runnables": [
+          {
+            "script": {
+              "text": "echo Hello world from task ${BATCH_TASK_INDEX}. >> /mnt/share/output_task_${BATCH_TASK_INDEX}.txt"
+            }
+          }
+        ],
+        "volumes": [
+          {
+            "gcs": {
+              "remotePath": "saizo-batch-sample-hello-world"
+            },
+            "mountPath": "/mnt/share"
+          }
+        ]
+      },
+      "taskCount": 3
+    }
+  ]
+}
